@@ -1,0 +1,9 @@
+<h1>Hello, <%= current_user.present? ? current_user.email : "Stranger" %></h1>
+<% if user_signed_in? %>
+	<%= link_to "view Profile", users_path%><br />
+	<%= link_to "spend 100$",  get_point_user_path(current_user, country: "same"), method: :post, class: "btn btn-primary" %><br />
+	<%= link_to "spend 100$ in foreign country",  get_point_user_path(current_user, country: "different"), method: :post %><br />
+	<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+	<%= link_to "Sign in", new_user_session_path %>
+<% end %>
