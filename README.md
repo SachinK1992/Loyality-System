@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby Version 2.3.8
 
-Things you may want to cover:
+* Rails Version 5.2.8
 
-* Ruby version
+#### Instructions
 
-* System dependencies
+* Clone repo
+* Install the bundle as `bundle install`
+* Create the file `/config/database.yml` using `/config/database.example` to add the potgresql username and password, followed by creating the database using `rails db:create` and then migrating it using `rails db:migrate`
+* Create the initial data by seeding as `rails db:seed`
+* Start the server:
 
-* Configuration
+```
+bundle exec rails server
+```
 
-* Database creation
+#### Tests
 
-* Database initialization
+To run all tests:
 
-* How to run the test suite
+```
+bundle exec rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Running the app
 
-* Deployment instructions
+Open the app:
 
-* ...
+```
+http://localhost:3000
+```
