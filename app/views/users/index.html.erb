@@ -1,0 +1,14 @@
+<%= link_to "< Back to dashboard", root_path %><br />
+<%= current_user.first_name %><br/>
+<%= current_user.email %><br />
+DOB: <%= current_user.dob.to_date %><br />
+User Type: <%= User.user_types[current_user.user_type] %><br />
+<%= "Spend money #{current_user.spend_money}" %><br />
+<%= "Points #{current_user.points}" %>
+
+<br><hr><br>
+
+Rewards:
+<% current_user.rewards.each do |reward| %>
+	<br><%= Reward.reward_types[reward.reward_type] %>
+<% end %>
